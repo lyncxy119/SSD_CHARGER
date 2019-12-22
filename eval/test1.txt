@@ -1,0 +1,44 @@
+
+GROUND TRUTH FOR: .\test\Image\core_battery00000968.jpg
+
+GROUND TRUTH FOR: .\test\Image\core_battery00000970.jpg
+
+GROUND TRUTH FOR: .\test\Image\coreless_battery00000001.jpg
+
+GROUND TRUTH FOR: .\test\Image\coreless_battery00000002.jpg
+
+GROUND TRUTH FOR: .\test\Image\coreless_battery00000005.jpg
+
+GROUND TRUTH FOR: .\test\Image\core_battery00000968.jpg
+
+GROUND TRUTH FOR: .\test\Image\core_battery00000970.jpg
+
+GROUND TRUTH FOR: .\test\Image\coreless_battery00000001.jpg
+
+GROUND TRUTH FOR: .\test\Image\coreless_battery00000002.jpg
+
+GROUND TRUTH FOR: .\test\Image\coreless_battery00000005.jpg
+
+GROUND TRUTH FOR: D:\YoloV3\yolov3\data\samples\Image\core_battery00000003.jpg
+
+GROUND TRUTH FOR: D:\YoloV3\yolov3\data\samples\Image\core_battery00000003.jpg
+
+GROUND TRUTH FOR: D:\YoloV3\yolov3\data\samples\Image\core_battery00000004.jpg
+
+GROUND TRUTH FOR: D:\YoloV3\yolov3\data\samples\Image\core_battery00000007.jpg
+
+GROUND TRUTH FOR: D:\YoloV3\yolov3\data\samples\Image\core_battery00000008.jpg
+
+GROUND TRUTH FOR: D:\YoloV3\yolov3\data\samples\Image\core_battery00000009.jpg
+
+GROUND TRUTH FOR: D:\YoloV3\yolov3\data\samples\Image\core_battery00000020.jpg
+
+GROUND TRUTH FOR: D:\YoloV3\yolov3\data\samples\Image\core_battery00000021.jpg
+
+GROUND TRUTH FOR: D:\YoloV3\yolov3\data\samples\Image\core_battery00000022.jpg
+
+GROUND TRUTH FOR: D:\YoloV3\yolov3\data\samples\Image\core_battery00000025.jpg
+
+GROUND TRUTH FOR: D:\YoloV3\yolov3\data\samples\Image\core_battery00000027.jpg
+
+GROUND TRUTH FOR: D:\YoloV3\yolov3\data\samples\Image\core_battery00000028.jpg
