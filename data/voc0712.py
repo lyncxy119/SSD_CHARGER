@@ -94,39 +94,42 @@ class VOCDetection(data.Dataset):
             (default: 'VOC2007')
     """
 
-    def __init__(self, root,
+    def __init__(self, img_dir,anno_dir,
                  # image_sets=['core_3000', 'coreless_3000'],
                  transform=None, target_transform=VOCAnnotationTransform(),
                  dataset_name='ChargePal'):
-        self.root = root
+        #self.root = root
         # self.image_set = image_sets
         self.transform = transform
         self.target_transform = target_transform
         self.name = dataset_name
         self.ids = list()
         self.anno_path_arr = list()
-        if not isinstance(root, (list, tuple)):
-            root = [root]
-        for dir_name in root:
-            img_dir = os.path.join(dir_name, 'Image')
-            anno_dir = os.path.join(dir_name, 'Annotation')
-            for name in sorted(os.listdir(img_dir)):
-                if not name.endswith('jpg'):
-                    print("not jpg")
-                    continue
-                anno_path = os.path.join(anno_dir, name).replace('.jpg', '.txt')
-                if not os.path.isfile(anno_path):
-                    print("not anno")
-                    continue
-                img_path = os.path.join(img_dir, name)
-                try:
-                    img = cv2.imread(img_path)
-                    height, width, channels = img.shape
-                except Exception:
-                    print('>>>error image>>>> {}'.format(img_path))
-                    continue
-                self.ids.append(img_path)
-                self.anno_path_arr.append(anno_path)
+        #if not isinstance(root, (list, tuple)):
+            #root = [root]
+        #for dir_name in root:
+            #img_dir = os.path.join(dir_name, 'Image')
+            #anno_dir = os.path.join(dir_name, 'Annotation')
+        print("load jpg")
+        for name in sorted(os.listdir(img_dir)):
+            if not name.endswith('jpg'):
+                continue
+            #print("anno_path")
+            anno_path = os.path.join(anno_dir, name).replace('.jpg', '.txt')
+            print(anno_path)
+            if not os.path.isfile(anno_path):
+                continue
+            img_path = os.path.join(img_dir, name)
+            try:
+                img = cv2.imread(img_path)
+                height, width, channels = img.shape
+            except Exception:
+                print('>>>error image>>>> {}'.format(img_path))
+                continue
+            print("path")
+            print(img_path)
+            self.ids.append(img_path)
+            self.anno_path_arr.append(anno_path)
 
     def __getitem__(self, index):
         im, gt, h, w = self.pull_item(index)
@@ -171,10 +174,7 @@ class VOCDetection(data.Dataset):
         return cv2.imread(img_id, cv2.IMREAD_COLOR)
 
     def get_image_name(self, index):
-        print(index)
-        print(self.ids)
         img_id = self.ids[index]
-        print(img_id)
         img_name=img_id.split('\\')[-1].split('.')[0]
         if img_name is None:
             img_name=img_id.split('/')[-1].split('.')[0]

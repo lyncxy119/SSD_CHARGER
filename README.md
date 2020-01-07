@@ -1,12 +1,33 @@
+### 环境初始化
+安装依赖
+
+    python 3.7
+
+    pip install -U -r requirements.txt
+
+
+### 训练
+
+    python train.py --dataset_root C:\data\sample\dataSet --epochs 50 --cuda 1
 
 
 
-#模型评估->计算mAP
+预加载`weights/vgg16_reducedfc.pth`开始训练。
 
-    python eval.py --trained_model weights/ssd.pth --voc_root C:/eval --cuda=0
 
-#arg：voc_root为需要评估的图片路径，需要将待测图片和标注文件分别放入Image文件夹和Annotation文件夹
-#绘制目标检测框
 
-    python test.py --trained_model weights/ssd.pth --voc_root path --cuda=0
+### 验证 -- 计算mAP
 
+    python eval.py --trained_model weights/gpu.pth --voc_root C:\opt\ssd.pytorch\test --cuda=1
+
+
+### 测试结果
+
+    python test.py --trained_model weights/gpu.pth --voc_root C:\opt\ssd.pytorch\test --cuda=1
+
+
+把预测出的位置画在图上，并保存在 ImageTarget目录中
+
+python -c "from test import *; test('C:\opt\data\Image','C:\opt\data\Anno')"
+
+python eval.py --img_path C:\opt\data\Image --anno_path C:\opt\data\Anno
